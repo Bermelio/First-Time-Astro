@@ -1,38 +1,28 @@
 ---
-<<<<<<< HEAD
-import type { PokemonList } from "../interface/pokemon-list"
-import MainLayout from "../layouts/MainLayout.astro";
 import PokeCard from "../components/PokeCard.astro";
-import "../styles/global.css";
-const title = "Static Home | Pokemon";
+import type { PokemonList } from "../interface/pokemon-list";
+import MainLayout from "../layouts/MainLayout.astro";
+const title = "Pokedex | Home"
+const resp = await fetch("https://pokeapi.co/api/v2/pokemon")
+const data = await (resp.json()) as PokemonList;
 
-const resp = await fetch('https://pokeapi.co/api/v2/pokemon/');
-const data = (await resp.json()) as PokemonList;
 ---
 <MainLayout title={title}>
-		<h1 class="text-5xl text-center py-2.5 text-slate-200
-		bg-radial from-sky-400 to-sky-600 shadow-xl rounded-b-2xl
-		">Lista de Pokemones</h1>
-		<main class="flex-1">
+	<h1
+	class="text-center text-5xl text-slate-100 p-5 
+	bg-radial from-emerald-500 to-green-900
+	rounded-b-xl shadow-lg
+	">Lista de Pokemones
+	</h1>
 
-			<section class="
-			grid grid-cols-1 md:grid-cols-5 m-10
-			">
-			{data.results.map(({name, url}) => (
-			<PokeCard
-			name = {name}
-			url= {url}
-			/>
-			))}
-			</section>
-		</main>
-</MainLayout>
-=======
-import MainLayout from "../layouts/MainLayout.astro";
----
-<MainLayout title="Home">
-	<h1>Astro</h1>
-	<p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quidem totam inventore, rerum libero, veritatis voluptatum accusamus laudantium sint, deserunt laborum! Odit nesciunt perferendis quasi, corrupti amet expedita vel in?</p>
+	<section
+	class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-5 gap-4 m-10">
+	{data.results.map(({url, name}) => <PokeCard
+	name = {name}
+	url={url}
+	/>
+	)}
+	</section>
+	
 </MainLayout>
 	
->>>>>>> origin/main
