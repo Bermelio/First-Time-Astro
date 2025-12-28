@@ -40,9 +40,10 @@ const AudioSrc = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pok
         <PokeCard
         name={name}
         url={url}
+        isBig
         />
       </span>
-      <audio controls autoplay class="mt-10">
+      <audio controls class="mt-10">
         <source src={AudioSrc} type="audio/ogg">
       </audio>
     </div>
