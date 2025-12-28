@@ -1,7 +1,7 @@
 ---
 interface Props {
-  url : string;
   name : string;
+  url : string;
 }
 
 const { url, name} = Astro.props;
@@ -9,14 +9,17 @@ const id = url.split('/').at(-2);
 const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 ---
 
-<div class="rounded flex flex-col justify-center items-center p-2 shadow-xl m-5
-hover:scale-115 duration-300 
-">
+<a
+class="
+rounded flex flex-col justify-center items-center p-2 shadow-xl m-5
+"
+href=`/pokemons/${name}`
+>
   <img
   src={imgSrc}
   alt=`sprait oficial del pokemon ${name}, epico`
   >
   <p
-  class=" text-xl text-center text-slate-200 " 
+  class=" text-xl text-center text-slate-200 m-10 capitalize" 
   >{name}</p>
-</div>
+</a>

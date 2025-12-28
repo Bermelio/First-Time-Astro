@@ -17,10 +17,13 @@ const data = await (resp.json()) as PokemonList;
 
 	<section
 	class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-5 gap-4 m-10">
-	{data.results.map(({url, name}) => <PokeCard
-	name = {name}
-	url={url}
-	/>
+	{data.results.map(({url, name}) => 
+	<div class="hover:scale-115 duration-300">
+		<PokeCard
+		name = {name}
+		url={url}
+		/>
+	</div>
 	)}
 	</section>
 	
