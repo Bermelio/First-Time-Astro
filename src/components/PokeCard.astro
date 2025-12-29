@@ -17,6 +17,7 @@ rounded flex flex-col justify-center items-center p-2 shadow-xl m-5
 href=`/pokemons/${name}`
 >
   <img
+  transition:name=`${name}-image`
   src={imgSrc}
   alt=`sprait oficial del pokemon ${name}, epico`
   class:list={[{'lg:w-50 h-auto': isBig,}]}
