@@ -9,3 +9,7 @@ export interface Result {
   name: string;
   url:  string;
 }
+
+export interface CurrentPage {
+  CurrentPage: number;
+}

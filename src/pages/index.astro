@@ -11,12 +11,12 @@ const data = await (resp.json()) as PokemonList;
 	<h1
 	class="text-center text-5xl text-slate-100 p-5 
 	bg-radial from-emerald-500 to-green-900
-	rounded-b-xl shadow-lg
+  shadow-lg
 	">Lista de Pokemones
 	</h1>
 
 	<section
-	class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-5 gap-4 m-10">
+	class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-5 gap-4 mx-30 my-10">
 	{data.results.map(({url, name}) => 
 	<div class="hover:scale-115 duration-300">
 		<PokeCard
@@ -26,6 +26,8 @@ const data = await (resp.json()) as PokemonList;
 	</div>
 	)}
 	</section>
+
+	
 	
 </MainLayout>
 	
