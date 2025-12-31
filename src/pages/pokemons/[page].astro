@@ -14,6 +14,7 @@ export const getStaticPaths = (async({ paginate }) => {
 
 const title = "Pokedex | Home";
 const { page } = Astro.props;
+console.log('hola',page);
 ---
 <MainLayout title={title}>
 	<h1
@@ -38,11 +39,21 @@ const { page } = Astro.props;
 	<section 
 	class="
 	bg-radial from-emerald-500 to-green-900 flex	justify-between px-10 py-2 my-10 mx-60 rounded-3xl text-slate-200 shadow-lg
-	">
-		<a href={page.url.prev}>Anterior</a>
+	font-bold ">
+
+		<a
+		class:list={[
+			'text-slate-200 font-bold',
+			{'text-red-600! cursor-not-allowed' : !page.url.prev}
+		]}
+		href={page.url.prev}>Anterior</a>
 		<span>{page.currentPage}</span>
-		<a href={page.url.next}>Siguiente</a>
+		<a
+		class:list={[
+			'text-slate-200 font-bold',
+			{'text-red-600! cursor-not-allowed' : !page.url.next}
+		]}
+		href={page.url.next}>Siguiente</a>
 	</section>
 	
 </MainLayout>
-	
