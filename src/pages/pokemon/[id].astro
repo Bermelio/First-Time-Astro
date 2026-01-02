@@ -1,9 +1,16 @@
 ---
 import type { GetStaticPaths } from "astro";
-import type { PokemonList } from "../../interface/pokemon-list";
+import type { PokemonList } from "@interface/pokemon-list";
 
-import MainLayout from "../../layouts/MainLayout.astro";
-import PokeCard from "../../components/PokeCard.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+// relative Path:
+// import PokeCard from "../../components/PokeCard.astro";
+// 
+// absolute path:
+// import PokeCard from "src/components/PokeCard.astro";
+// 
+// path alias:
+import PokeCard from "@components/PokeCard.astro";
 
 
 export const getStaticPaths = (async() => {
