@@ -4,6 +4,7 @@ import type { PokemonList } from "../../interface/pokemon-list";
 
 import PokeCard from "../../components/PokeCard.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
+import Home from "../../components/Home.astro"
 
 export const getStaticPaths = (async({ paginate }) => {
 	const resp = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
@@ -14,15 +15,16 @@ export const getStaticPaths = (async({ paginate }) => {
 
 const title = "Pokedex | Home";
 const { page } = Astro.props;
-console.log('hola',page);
 ---
 <MainLayout title={title}>
-	<h1
+	<h2
 	class="text-center text-5xl text-slate-100 p-5 
 	bg-radial from-emerald-500 to-green-900
 	shadow-lg
 	">Lista de Pokemones
-	</h1>
+	</h2>
+	
+	<Home/>
 
 	<section
 	class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-5 mx-40 my-10">

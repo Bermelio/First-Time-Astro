@@ -8,6 +8,7 @@ export interface PokemonList {
 export interface Result {
   name: string;
   url:  string;
+  id?: string;
 }
 
 export interface CurrentPage {
