@@ -1,9 +1,8 @@
 ---
-
+const {btnName, btnPath}  = Astro.props
 ---
-
-<div class="relative">
-  <div class="absolute top-0- left-1/20 bg-blue-500 rounded-b-full">
-    <a href="/" class="p-1">🏠</a>
-  </div>
-</div>
+<a
+class="min-w-25 h-20 flex justify-center items-center overflow-hidden bg-black-soul text-white-soul transition-all duration-300 hover:bg-red-soul hover:ring-1 hover:ring-red-soul hover:ring-offset-2 text-center" 
+href={btnPath}
+>{btnName}
+</a>

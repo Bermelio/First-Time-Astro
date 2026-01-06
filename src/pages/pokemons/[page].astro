@@ -17,17 +17,17 @@ const title = "Pokedex | Home";
 const { page } = Astro.props;
 ---
 <MainLayout title={title}>
-	<h2
-	class="text-center text-5xl text-slate-100 p-5 
-	bg-radial from-emerald-500 to-green-900
-	shadow-lg
-	">Lista de Pokemones
-	</h2>
-	
-	<Home/>
+	<div class="flex justify-around min-h-50 bg-white-soul pt-10">
+
+		<h2 class="text-8xl text-black-soul">
+			Lista de las criaturas
+		</h2>
+		
+		<Home btnName="Home" btnPath="/"/>
+	</div>
 
 	<section
-	class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-5 mx-40 my-10">
+	class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-5 mx-90 my-10">
 	{page.data.map(({ name, url }) => 
 	<div class="hover:scale-105 duration-300 gap-4">
 		<PokeCard

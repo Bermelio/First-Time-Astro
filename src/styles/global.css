@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
 body{
-  background-image: linear-gradient(to bottom, #0f4faf, #006ac2, #0083d0, #009bda, #0bb3e1);
-  font-family: "Kanit", sans-serif;
-  font-weight: 300;
+  background-color: #D63426;
+  font-family: "Passion One", sans-serif;
+  font-weight: 400;
   font-style: normal;
+}
+
+@theme{
+  --color-white-soul: #E8D5C4;
+  --color-black-soul: #1A1A1A;
+  --color-red-soul: #D63426;
+  --color-blue-soul: #2e5998;
 }

@@ -13,7 +13,8 @@ const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites
 <!-- href=`/pokemons/${name}` -->
 <a
 class="
-rounded flex flex-col justify-center items-center p-2 shadow-xl m-2
+flex flex-col justify-center items-center p-2 shadow-sm m-2
+bg-white-soul
 "
 href=`/pokemon/${id}`
 >
@@ -24,6 +25,6 @@ href=`/pokemon/${id}`
   class:list={[{'lg:w-50 h-auto': isBig,}]}
   >
   <p
-  class=" text-xl text-center text-slate-200 m-10 capitalize" 
+  class=" text-xl text-center text-black-soul m-10 capitalize" 
   >{name}</p>
 </a>
