@@ -4,6 +4,7 @@ import type { PokemonList } from "../../interface/pokemon-list";
 
 import MainLayout from "../../layouts/MainLayout.astro";
 import PokeCard from "@components/PokeCard.astro";
+import NavBar from "src/shared/NavBar.astro";
 
 export const getStaticPaths = (async() => {
 
@@ -24,22 +25,31 @@ const { url } = Astro.props;
 
 const id = url.split('/').at(-2);
 const AudioSrc = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${id}.ogg`
+const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 
 
 ---
 <main class="min-h-screen">
   <MainLayout 
-  title=`Pokemon | #${id} - ${name}`
-  description=`informacion sobre el pokemon numero ${id} conocido como: ${name}`
-  >
+title=`Pokemon | #${id} - ${name}`
+description=`informacion sobre el pokemon numero ${id} conocido como: ${name}`
+image={imgSrc}
+/>
+<div class="flex justify-around min-h-50 bg-white-soul pt-10">
+
+		<h2 class="text-8xl text-black-soul">
+			Lista de las criaturas
+		</h2>
+
+		<NavBar/>
+		
+	</div>
     <div class="flex flex-col items-center">
-      <a
-      href="#"
-      onclick="history.back(); return false;"
+      <h3
       class="
-      text-red-200 text-center text-8xl capitalize p-4 m-4
-      hover:bg-blue-900 rounded-2xl
-      ">{name}</a>
+      text-white-soul text-center text-8xl capitalize p-4 m-4
+      hover:bg-blue-soul rounded-2xl
+      ">{name}</h3>
       <span>
         <PokeCard
         name={name}

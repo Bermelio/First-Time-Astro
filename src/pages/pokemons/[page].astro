@@ -22,13 +22,11 @@ const { page } = Astro.props;
 		<h2 class="text-8xl text-black-soul">
 			Lista de las criaturas
 		</h2>
-
 		<NavBar/>
-		
 	</div>
 
 	<section
-	class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-5 mx-90 my-10">
+	class="grid sm:grid-cols-1  lg:grid-cols-3 xl:grid-cols-5 mx-90 my-10">
 	{page.data.map(({ name, url }) => 
 	<div class="hover:scale-105 duration-300 gap-4">
 		<PokeCard
@@ -41,22 +39,20 @@ const { page } = Astro.props;
 
 	<section 
 	class="
-	bg-radial from-emerald-500 to-green-900 flex	justify-between px-10 py-2 my-10 mx-60 rounded-3xl text-slate-200 shadow-lg
-	font-bold ">
-
+	bg-black-soul	flex justify-around py-10
+	">
 		<a
 		class:list={[
-			'text-slate-200 font-bold',
+			'text-white-soul text-2xl',
 			{'text-red-600! cursor-not-allowed' : !page.url.prev}
 		]}
 		href={page.url.prev}>Anterior</a>
-		<span>{page.currentPage}</span>
+		<span class="text-2xl text-white-soul">{page.currentPage}</span>
 		<a
 		class:list={[
-			'text-slate-200 font-bold',
+			'text-white-soul text-2xl',
 			{'text-red-600! cursor-not-allowed' : !page.url.next}
 		]}
 		href={page.url.next}>Siguiente</a>
 	</section>
-	
 </MainLayout>

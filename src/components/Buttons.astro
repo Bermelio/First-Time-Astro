@@ -1,8 +1,9 @@
 ---
-const {btnName, btnPath}  = Astro.props
+const {btnName, btnPath, onclick}  = Astro.props
 ---
 <a
-class="min-w-25 h-20 flex justify-center items-center overflow-hidden bg-black-soul text-white-soul transition-all duration-300 hover:bg-red-soul hover:ring-1 hover:ring-red-soul hover:ring-offset-2 text-center" 
+class="min-w-30 text-2xl h-20 flex justify-center items-center overflow-hidden bg-black-soul text-white-soul transition-all duration-300 hover:bg-red-soul hover:ring-1 hover:ring-red-soul hover:ring-offset-2 text-center" 
 href={btnPath}
+onclick={onclick}
 >{btnName}
 </a>

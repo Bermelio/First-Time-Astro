@@ -2,8 +2,7 @@
 import Buttons from '@components/Buttons.astro'
 ---
 <nav class="flex gap-10">
-  <Buttons btnName='random' />
-  <Buttons btnName='about' />
+  <Buttons btnName="Back" onclick="history.back()"/>
   <Buttons btnName='Favs' btnPath="Favorites"/>
   <Buttons btnName='Home' btnPath='/'/>
 </nav>
