@@ -5,6 +5,7 @@ import type { PokemonList } from "../../interface/pokemon-list";
 import MainLayout from "../../layouts/MainLayout.astro";
 import PokeCard from "@components/PokeCard.astro";
 import NavBar from "src/shared/NavBar.astro";
+import { Icon } from "astro-icon/components";
 
 export const getStaticPaths = (async() => {
 
@@ -31,11 +32,11 @@ const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites
 ---
 <main class="min-h-screen">
   <MainLayout 
-title=`Pokemon | #${id} - ${name}`
-description=`informacion sobre el pokemon numero ${id} conocido como: ${name}`
-image={imgSrc}
-/>
-<div class="flex justify-around min-h-50 bg-white-soul pt-10">
+  title=`Pokemon | #${id} - ${name}`
+  description=`informacion sobre el pokemon numero ${id} conocido como: ${name}`
+  image={imgSrc}
+  />
+  <div class="flex justify-around min-h-50 bg-white-soul pt-10">
 
 		<h2 class="text-8xl text-black-soul">
 			Lista de las criaturas
@@ -44,12 +45,19 @@ image={imgSrc}
 		<NavBar/>
 		
 	</div>
-    <div class="flex flex-col items-center">
-      <h3
-      class="
-      text-white-soul text-center text-8xl capitalize p-4 m-4
-      hover:bg-blue-soul rounded-2xl
-      ">{name}</h3>
+      <div class="flex flex-col items-center">
+        <div class="flex flex-row">
+          <h3
+          class="
+          text-white-soul text-center text-8xl capitalize p-4 m-4 
+          mt-10 rounded-2xl
+          ">{name}</h3>
+          <button 
+          id="btn-favorite" class="mt-6" data-name={name} data-id={id}>
+            <Icon name="cora-fav" size={50} class="hover:animate-pulse hidden"/>
+            <Icon name="sin-cora" size={50}/>
+          </button>
+        </div>
       <span>
         <PokeCard
         name={name}
@@ -62,6 +70,26 @@ image={imgSrc}
       </audio>
     </div>
   </MainLayout>
-
-
 </main>
+<script>
+  
+interface FavoritePokemon{
+  name: string;
+  id: number;
+}
+
+document.addEventListener('astro:page-load',()=>{
+  const btnFavorite = document.querySelector("#btn-favorite") as HTMLButtonElement;
+
+  if(!btnFavorite) return;
+
+  const name = btnFavorite.dataset.name;
+  const id = btnFavorite.dataset.id;
+
+  btnFavorite.addEventListener('click', () => {
+    console.log(name, id) 
+  })
+})
+
+
+</script>
