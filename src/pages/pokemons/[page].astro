@@ -4,7 +4,7 @@ import type { PokemonList } from "@interface/pokemon-list";
 
 import PokeCard from "@components/PokeCard.astro";
 import MainLayout from "@layouts/MainLayout.astro";
-import NavBar from "../../shared/NavBar.astro"
+import NavBar from "@components/NavBar.astro";
 
 export const getStaticPaths = (async({ paginate }) => {
 	const resp = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151")

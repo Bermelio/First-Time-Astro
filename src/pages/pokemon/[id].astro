@@ -11,7 +11,7 @@ import MainLayout from "@layouts/MainLayout.astro";
 // 
 // path alias:
 import PokeCard from "@components/PokeCard.astro";
-import NavBar from "src/shared/NavBar.astro";
+import NavBar from "@components/NavBar.astro";
 
 
 export const getStaticPaths = (async() => {
@@ -38,20 +38,20 @@ const AudioSrc = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pok
 const imgSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
 
 ---
-<MainLayout 
-title=`Pokemon | #${id} - ${name}`
-description=`informacion sobre el pokemon numero ${id} conocido como: ${name}`
-image={imgSrc}
-/>
-<div class="flex justify-around min-h-50 bg-white-soul pt-10">
+  <MainLayout 
+  title=`Pokemon | #${id} - ${name}`
+  description=`informacion sobre el pokemon numero ${id} conocido como: ${name}`
+  image={imgSrc}
+  />
+  <div class="flex justify-around min-h-50 bg-white-soul pt-10">
 
-		<h2 class="text-8xl text-black-soul">
-			Lista de las criaturas
-		</h2>
+      <h2 class="text-8xl text-black-soul">
+        Lista de las criaturas
+      </h2>
 
-		<NavBar/>
-		
-	</div>
+      <NavBar/>
+      
+  </div>
     <div class="flex flex-col items-center">
       <h3
       class="
